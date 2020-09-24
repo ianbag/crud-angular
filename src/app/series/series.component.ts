@@ -9,17 +9,17 @@ import { SeriesService } from './series.service'
 })
 export class SeriesComponent implements OnInit {
 
-  public serie: Series[]
+  public serie: Series[];
 
   constructor(private serieService: SeriesService) { }
 
-  ngOnInit() {
-    this.getSeries()
+  ngOnInit(): void {
+    this.getSeries();
   }
 
-  getSeries() {
-    this.serieService.getSeries().subscribe((serie) => {
-      this.serie = serie['data']
+  getSeries(): void {
+    this.serieService.getSeries().subscribe(serie => {
+      this.serie = serie['data'];
     })
   }
 
